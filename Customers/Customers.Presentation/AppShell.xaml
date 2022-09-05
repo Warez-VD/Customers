@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="Customers.Presentation.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:customerspages="clr-namespace:Customers.Presentation.Pages"
+    xmlns:local="clr-namespace:Customers.Presentation"
+    Shell.FlyoutBehavior="Disabled">
+
+    <ShellContent
+        Title="Customers"
+        ContentTemplate="{DataTemplate customerspages:CustomersPage}"
+        Route="CustomersPage" />
+
+</Shell>
