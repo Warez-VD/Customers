@@ -10,6 +10,6 @@
     <ShellContent
         Title="Customers"
         ContentTemplate="{DataTemplate customerspages:CustomersPage}"
-        Route="CustomersPage" />
+        Route="listcustomers" />
 
 </Shell>

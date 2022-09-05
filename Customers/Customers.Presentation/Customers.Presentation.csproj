@@ -46,6 +46,8 @@
 
 		<!-- Raw Assets (also remove the "Resources\Raw" prefix) -->
 		<MauiAsset Include="Resources\Raw\**" LogicalName="%(RecursiveDir)%(Filename)%(Extension)" />
+     <PackageReference Include="sqlite-net-pcl" Version="1.8.116" />
+     <PackageReference Include="sqlite-net-static" Version="1.8.116" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -53,13 +55,18 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <Folder Include="ViewModels\" />
-	</ItemGroup>
-
-	<ItemGroup>
+	  <Compile Update="Pages\AddCustomerPage.xaml.cs">
+	    <DependentUpon>AddCustomerPage.xaml</DependentUpon>
+	  </Compile>
 	  <Compile Update="Pages\CustomersPage.xaml.cs">
 	    <DependentUpon>CustomersPage.xaml</DependentUpon>
 	  </Compile>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <MauiXaml Update="Pages\AddCustomerPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	</ItemGroup>
 
 </Project>

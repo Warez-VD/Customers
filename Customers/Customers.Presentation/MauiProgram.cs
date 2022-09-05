@@ -1,6 +1,7 @@
 ﻿using Customers.Data;
 using Customers.Presentation.Common;
 using Customers.Presentation.Pages;
+using Customers.Presentation.ViewModels;
 
 namespace Customers.Presentation;
 
@@ -18,9 +19,12 @@ public static class MauiProgram
 			});
 
 		builder.Services.AddTransient<CustomersPage>();
-		var dbPath = FileAccessHelper.GetLocalFilePath("Customers.db3");
-        builder.AddData(dbPath);
+		builder.Services.AddTransient<CustomersViewModel>();
+		builder.Services.AddTransient<AddCustomerPage>();
+		builder.Services.AddTransient<AddCustomerViewModel>();
+		var dbPath = FileAccessHelper.GetLocalFilePath(Constants.DbName);
+		builder.AddData(dbPath);
 
-        return builder.Build();
+		return builder.Build();
 	}
 }
