@@ -8,10 +8,16 @@ namespace Customers.Data.Repositories
     {
         private readonly SQLiteConnection _connection;
 
-        public CustomerRepository(string dbPath)
+        public CustomerRepository(SQLiteConnection connection)
         {
-            _connection = new SQLiteConnection(dbPath);
+            _connection = connection;
             _connection.CreateTable<Customer>();
+        }
+
+        public Customer Get(int id)
+        {
+            var customer = _connection.Find<Customer>(id);
+            return customer;
         }
 
         public IList<Customer> GetAll()
