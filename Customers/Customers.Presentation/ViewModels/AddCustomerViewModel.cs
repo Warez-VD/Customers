@@ -15,8 +15,6 @@ namespace Customers.Presentation.ViewModels
 
         public ICommand SaveCommand { get; private set; }
 
-        public ICommand DeleteCommand { get; private set; }
-
         string _name;
         public string Name
         {
